@@ -1,0 +1,42 @@
+[Defines]
+  INF_VERSION                    = 0x00010006
+  BASE_NAME                      = MyUtility
+  FILE_GUID                      = 7c89d64f-31b9-4d25-aa1e-87d1f581b67b
+  MODULE_TYPE                    = UEFI_APPLICATION
+  VERSION_STRING                 = 0.1
+  ENTRY_POINT                    = main
+
+#
+#  VALID_ARCHITECTURES           = IA32 X64
+#
+
+[Sources]
+  MyACPI_V4.c
+  MyUtility.c
+  MyPCI.c
+  MyUI.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  ShellPkg/ShellPkg.dec
+  StdLib/StdLib.dec
+
+[LibraryClasses]
+  ShellCEntryLib
+  BaseLib
+  BaseMemoryLib
+  MemoryAllocationLib
+  LibStdLib
+  DevConsole
+  cjsonlib
+  PciExpressLib
+  IoLib
+  LibMath
+  ShellLib
+  UefiMemoryLib
+  UefiLib
+  LibC
+  LibString
+  LibStdio
+  DevShell
+  UefiBootServicesTableLib
